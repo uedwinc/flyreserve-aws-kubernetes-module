@@ -17,3 +17,7 @@ output "eks_cluster_endpoint" {
 output "eks_cluster_nodegroup_id" {
   value = aws_eks_node_group.flyreserve-node-group.id
 }
+
+output "kubeconfig" {
+  value = local_file.kubeconfig
+}
