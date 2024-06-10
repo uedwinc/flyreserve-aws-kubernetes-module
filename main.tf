@@ -149,7 +149,7 @@ users:
 - name: ${aws_eks_cluster.flyreserve-cluster.arn}
   user:
     exec:
-      apiVersion: client.authentication.k8s.io/v1beta1
+      apiVersion: "client.authentication.k8s.io/v1beta1"
       command: aws-iam-authenticator
       args:
         - "token"
