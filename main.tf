@@ -150,11 +150,14 @@ users:
   user:
     exec:
       apiVersion: "client.authentication.k8s.io/v1beta1"
-      command: aws-iam-authenticator
+      command: aws
       args:
-        - "token"
-        - "-i"
-        - "${aws_eks_cluster.flyreserve-cluster.name}"
+      - eks
+      - get-token
+      - --region
+      - "${var.aws_region}"
+      - --cluster-name
+      - "${aws_eks_cluster.flyreserve-cluster.name}"
     KUBECONFIG
   filename = "kubeconfig"
 }
