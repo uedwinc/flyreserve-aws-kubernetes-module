@@ -18,6 +18,10 @@ output "eks_cluster_nodegroup_id" {
   value = aws_eks_node_group.flyreserve-node-group.id
 }
 
+output "cluster_security_group_id" {
+  value   = aws_eks_cluster.flyreserve-cluster.vpc_config[0].cluster_security_group_id
+}
+
 output "kubeconfig" {
   value = local_file.kubeconfig
 }
